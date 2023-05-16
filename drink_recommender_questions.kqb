@@ -1,0 +1,81 @@
+age($age)
+    How old are you ?
+    --- 
+    $age = select_1
+        1: 1 - 17
+            ! you are not yet an adult
+        2: 18 and above  
+            ! you are an adult
+
+alcohol_preference($choice)
+    Do you take alcoholic drinks ?
+    ---
+    $choice = yn
+        True  ! So you want an alcoholic drink
+        False ! I see you don't care for an alcoholic drink
+
+weight($kgs)
+    How much do you weigh?
+    ---
+    $kgs = float(8.0 - 400)
+
+height($metres)
+    How tall are you?
+    ---
+    $metres = float(0.5 - 3)
+
+time_of_day($daytime)
+    What time of the day?
+    ---
+    $daytime = select_1
+        1: morning
+        2: afternoon
+        3: night
+
+weather_information($weather_types)
+    How is the weather like?
+        - Please choose the most appropriate weather type(s)
+    ---
+    $weather_types = select_1
+        1: hot
+        2: cold
+        3: rainy
+        4: snowy
+        5: None of the above
+   		      ! Thank goodness
+
+
+health_information($conditions)
+    What health issues do you currently have?
+    ---
+    $conditions = select_1
+        1: Diabetes
+        2: Lactose intolerance
+        3: None of the above
+   		      ! You do not have any of the listed conditions.
+
+diet_preference($diet_types)
+    What is your diet preference?
+        - Please select the most applicable option
+    ---
+    $diet_types = select_1
+        1: Vegan
+        2: Keto
+        3: None of the above
+   		      ! You are not on a specific diet.
+
+fitness_status($diet_type, $routines)
+    What gym/fitness routine are you since you are on $diet_type diet?
+        - Please select the best option
+    ---
+    $routines = select_1
+        1: Weight gain
+        2: Weight loss
+        3: None of the above
+   		    ! You are not on a fitness routine.
+
+budget($category)
+    How much are you willing to spend on a drink?
+        - Please enter amount in Naira (₦) 
+    ---
+    $category = integer(low=100-200 | medium=250-450 | high=500-1000 |any=1100-)
