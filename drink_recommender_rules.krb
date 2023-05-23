@@ -1,37 +1,90 @@
 
 
-recommend_alcohol_hb
+recommend_alcohol
     # this would recommend alcoholic drink
     use drinks(
-      ("Star Larger", "Goldberg", "Guinness Stout", "Gulder", "Heineken"),($health,$day)
+      ("Star Larger", "Goldberg", "Guinness Stout", "Gulder", "Heineken")
     )
     when
         # would not recommend in the morning
         drink_recommender_questions.time_of_day($day)
         check $day in (2,3) 
+        
         # recommend depending on the age range
         drink_recommender_questions.age(2)
+        
         #check that user does not have Diabetes
         drink_recommender_questions.health_information($health)
         check $health in (2,3)
+
         # check user like alcohol
         drink_recommender_questions.alcohol_preference(True)
+
+        # weather preference
+        drink_recommender_questions.weather_information($weather_types)
+        check $weather_types in (1,2,3,4)
 
 
 recommend_dairy_drink
     # this would recommend dairy drinks
     use drinks(
-      ("Viju Milk", "Fresh Yo"),($health,$day)
+      ("Viju Milk", "Fresh Yo")
     )
     when
-      #any time of the day
+      # any time of the day
       drink_recommender_questions.time_of_day($day)
       check $day in (1,2,3) 
-      # user is not Lactose intolerant
+
+      # Health check -> user is not Lactose intolerant
       drink_recommender_questions.health_information($health)
       check $health in (1,3)
 
+      # weather preference
+      drink_recommender_questions.weather_information($weather_type)
+      check $weather_type in (1,4)
 
-recommend_caffeine_drink
+      # check user like alcohol
+      drink_recommender_questions.alcohol_preference(False)
+        
 
-  
+# low caffeinated drink in cold weather
+recommend_caffeine_drink_low_hot
+    use drinks(
+      ("Lipton", "Top Tea","Nescafe")
+    )
+    when
+        # not recommending caffeinated drink at night
+        drink_recommender_questions.time_of_day($day)
+        check $day in (1,2,3)
+
+        # user with Diabetes can still take this
+        drink_recommender_questions.health_information($health)
+        check $health in (1,2,3)
+        
+        # check user like alcohol
+        drink_recommender_questions.alcohol_preference(False)
+        
+        drink_recommender_questions.weather_information($weather_type)
+        check $weather_type in (2,3)
+
+
+# high caffeinated drink in hot weather
+recommend_caffeine_drink_high
+    use drinks(
+      ("Fearless", "Predator")
+    )
+    when
+        # not recommending caffeinated drink at night
+        drink_recommender_questions.time_of_day($day)
+        check $day in (1,2)
+        
+        # user with Diabetes can't take this
+        drink_recommender_questions.health_information($health)
+        check $health in (2,3)
+
+        # weather condition is hot --> assuming drinks would be served chilled
+        drink_recommender_questions.weather_information($weather_type)
+        $weather_type in (1,4)
+        
+        # check user like alcohol
+        drink_recommender_questions.alcohol_preference(False)

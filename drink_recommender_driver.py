@@ -19,7 +19,7 @@ def drink_recommendation_test():
         # print("Here are some drinks you might like:")
         with engine.prove_goal('drink_recommender_rules.drinks($drinks)') as gen:
             for vars, plan in gen:
-                print(vars['drinks'], vars)
+                print(vars['drinks'], vars, plan)
         #         print("Here are some of the questions you should practice:")
         #         for index, item in enumerate(vars['links']):
         #             # STUDENTS: you will need to edit this line

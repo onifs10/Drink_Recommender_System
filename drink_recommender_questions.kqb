@@ -14,16 +14,6 @@ alcohol_preference($choice)
         True  ! So you want an alcoholic drink
         False ! I see you don't care for an alcoholic drink
 
-weight($kgs)
-    How much do you weigh?
-    ---
-    $kgs = float(8.0 - 400)
-
-height($metres)
-    How tall are you?
-    ---
-    $metres = float(0.5 - 3)
-
 time_of_day($daytime)
     What time of the day?
     ---
@@ -37,13 +27,11 @@ weather_information($weather_types)
         - Please choose the most appropriate weather type(s)
     ---
     $weather_types = select_1
-        1: hot
-        2: cold
-        3: rainy
-        4: snowy
-        5: None of the above
+        1: sunny
+        2: rainy
+        3: snowy
+        4: clear sky
    		      ! Thank goodness
-
 
 health_information($conditions)
     What health issues do you currently have?
@@ -53,29 +41,3 @@ health_information($conditions)
         2: Lactose intolerance
         3: None of the above
    		      ! You do not have any of the listed conditions.
-
-diet_preference($diet_types)
-    What is your diet preference?
-        - Please select the most applicable option
-    ---
-    $diet_types = select_1
-        1: Vegan
-        2: Keto
-        3: None of the above
-   		      ! You are not on a specific diet.
-
-fitness_status($diet_type, $routines)
-    What gym/fitness routine are you since you are on $diet_type diet?
-        - Please select the best option
-    ---
-    $routines = select_1
-        1: Weight gain
-        2: Weight loss
-        3: None of the above
-   		    ! You are not on a fitness routine.
-
-budget($category)
-    How much are you willing to spend on a drink?
-        - Please enter amount in Naira (₦) 
-    ---
-    $category = integer(low=100-200 | medium=250-450 | high=500-1000 |any=1100-)
