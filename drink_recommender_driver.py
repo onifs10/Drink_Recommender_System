@@ -20,9 +20,9 @@ def drink_recommendation_test():
         with engine.prove_goal('drink_recommender_rules.drinks($drinks)') as gen:
             for index, (vars, plan) in enumerate(gen):
                 category = vars['drinks'][0]
-                also = "also" if index > 0 else ""
-                print(f"You can {also} take {category} drinks.")
-                print(f"Here are some of {category} drinks you should try:")
+                also = "also " if index > 0 else ""
+                print(f"You can {also}take {category}")
+                print(f"Here are some of {category} you should try:")
                 for index, item in enumerate(vars['drinks'][1:]):
                     print(f"\n{index}. {item}")
 

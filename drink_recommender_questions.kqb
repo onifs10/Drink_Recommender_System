@@ -41,3 +41,12 @@ health_information($conditions)
         2: Lactose intolerance
         3: None of the above
    		      ! You do not have any of the listed conditions.
+
+needs_energy($preference)
+    Are you having a slow day ?
+    ---
+    $preference = yn
+        True  ! I guess, you might need to replenish your Energy
+        False ! Alight
+         
+    
