@@ -16,14 +16,15 @@ def drink_recommendation_test():
     print("doing proof")
 
     try:
-        # print("Here are some drinks you might like:")
+        print("Here are some categories of drinks you might like:")
         with engine.prove_goal('drink_recommender_rules.drinks($drinks)') as gen:
-            for vars, plan in gen:
-                print(vars['drinks'], vars, plan)
-        #         print("Here are some of the questions you should practice:")
-        #         for index, item in enumerate(vars['links']):
-        #             # STUDENTS: you will need to edit this line
-        #             print(f"\n{index + 1}. {item}")
+            for index, (vars, plan) in enumerate(gen):
+                category = vars['drinks'][0]
+                also = "also" if index > 0 else ""
+                print(f"You can {also} take {category} drinks.")
+                print(f"Here are some of {category} drinks you should try:")
+                for index, item in enumerate(vars['drinks'][1:]):
+                    print(f"\n{index}. {item}")
 
     except Exception:
         print("in exception")

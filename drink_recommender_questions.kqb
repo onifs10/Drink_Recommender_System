@@ -11,7 +11,7 @@ alcohol_preference($choice)
     Do you take alcoholic drinks ?
     ---
     $choice = yn
-        True  ! So you want an alcoholic drink
+        True  ! Noted, you want an alcoholic drink
         False ! I see you don't care for an alcoholic drink
 
 time_of_day($daytime)
