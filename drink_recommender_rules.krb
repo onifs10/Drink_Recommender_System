@@ -82,9 +82,10 @@ recommend_caffeine_drink_high
         drink_recommender_questions.health_information($health)
         check $health in (2,3)
 
+        # check user like alcohol
+        drink_recommender_questions.alcohol_preference(False)
+        
         # weather condition is hot --> assuming drinks would be served chilled
         drink_recommender_questions.weather_information($weather_type)
         $weather_type in (1,4)
         
-        # check user like alcohol
-        drink_recommender_questions.alcohol_preference(False)
