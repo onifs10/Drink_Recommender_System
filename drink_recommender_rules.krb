@@ -12,11 +12,11 @@ recommend_alcohol
         drink_recommender_questions.health_information($health)
         check $health in (2,3)
 
-        # check user like alcohol
-        drink_recommender_questions.alcohol_preference(True)
-
         # recommend depending on the age range
         drink_recommender_questions.age(2)
+        
+        # check user like alcohol
+        drink_recommender_questions.alcohol_preference(True)
 
         # weather preference
         drink_recommender_questions.weather_information($weather_types)
@@ -26,7 +26,7 @@ recommend_alcohol
 recommend_dairy_drink
     # this would recommend dairy drinks
     use drinks(
-      ("Dairy Drinks","Viju Milk", "Fresh Yo")
+      ("Dairy Drinks","Viju Milk", "Fresh Yo", "Hollandia")
     )
     when
       # any time of the day
@@ -40,11 +40,12 @@ recommend_dairy_drink
       # weather preference
       drink_recommender_questions.weather_information($weather_type)
       check $weather_type in (1,4)
+    
       
         
 
 # low caffeinated drink in cold weather
-recommend_tea
+recommend_teas
     use drinks(
       ("Hot Teas","Lipton", "Top Tea","Hot choco")
     )
