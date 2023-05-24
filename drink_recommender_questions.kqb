@@ -47,6 +47,6 @@ needs_energy($preference)
     ---
     $preference = yn
         True  ! I guess, you might need to replenish your Energy
-        False ! Alight
+        False ! Alright
          
     

@@ -1,5 +1,3 @@
-
-
 recommend_alcohol
     # this would recommend alcoholic drink
     use drinks(
@@ -82,7 +80,7 @@ recommend_caffeine_drink_low_hot
         drink_recommender_questions.weather_information($weather_type)
         check $weather_type in (2,3)
 
-        #does not need to replenish energy
+        #needs to replenish energy
         drink_recommender_questions.needs_energy(True)
 
 # cold caffeinated drink in hot weather
