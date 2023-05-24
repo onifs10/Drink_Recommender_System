@@ -28,17 +28,22 @@ weather_information($weather_types)
     ---
     $weather_types = select_1
         1: sunny
+              ! It's quite hot outside!
         2: rainy
+              ! It's been raining!
         3: snowy
+              ! It's pretty snowy out there!
         4: clear sky
-   		      ! Thank goodness
+   		      ! Thank goodness, the weather is great!
 
 health_information($conditions)
     What health issues do you currently have?
     ---
     $conditions = select_1
         1: Diabetes
+              ! You have indicated that you are diabetic
         2: Lactose intolerance
+              ! You have indicated that you are lactose intolerant
         3: None of the above
    		      ! You do not have any of the listed conditions.
 
@@ -46,7 +51,7 @@ needs_energy($preference)
     Are you having a slow day ?
     ---
     $preference = yn
-        True  ! I guess, you might need to replenish your Energy
+        True  ! I guess, you might need to replenish your energy.
         False ! Alright
          
     

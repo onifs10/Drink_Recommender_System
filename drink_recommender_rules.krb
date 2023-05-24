@@ -22,11 +22,14 @@ recommend_alcohol
         drink_recommender_questions.weather_information($weather_types)
         check $weather_types in (1,2,3,4)
 
+        #does not need to replenish energy
+        drink_recommender_questions.needs_energy(False)
+
 
 recommend_dairy_drink
     # this would recommend dairy drinks
     use drinks(
-      ("Dairy Drinks","Viju Milk", "Fresh Yo")
+      ("Cold Dairy Drinks","Viju Milk", "Fresh Yo")
     )
     when
       # any time of the day
@@ -66,12 +69,12 @@ recommend_tea
 # hot caffeinated drink in cold weather
 recommend_caffeine_drink_low_hot
     use drinks(
-      ("Caffeinated beverage","Black Coffee","Expresso","Cappuccino","Nescafe")
+      ("Hot Caffeinated Beverages","Black Coffee","Expresso","Cappuccino","Nescafe")
     )
     when
         # don't recommend at night 
         drink_recommender_questions.time_of_day($day)
-        check $day in (1,2,3)
+        check $day in (1,2)
 
         # user with Diabetes can still take this
         drink_recommender_questions.health_information($health)
@@ -86,7 +89,7 @@ recommend_caffeine_drink_low_hot
 # cold caffeinated drink in hot weather
 recommend_caffeine_drink_high
     use drinks(
-      ("Chilled Energy drinks","Fearless", "Predator")
+      ("Chilled Energy Drinks","Fearless", "Predator")
     )
     when
         # not recommending caffeinated drink at night
@@ -108,7 +111,7 @@ recommend_caffeine_drink_high
 #carbonated Drinks
 recommend_carbonated_drinks
     use drinks (
-      ("Chilled carbonated drinks","Coca-Cola", "Pepsi","Fanta", "Sprite", "7UP", "Bigi Cola", "Limca")
+      ("Chilled Carbonated Drinks","Coca-Cola", "Pepsi","Fanta", "Sprite", "7UP", "Bigi Cola", "Limca")
     )
     when 
         # any time of the day 
