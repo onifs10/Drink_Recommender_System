@@ -14,7 +14,7 @@ recommend_alcohol
 
         # recommend depending on the age range
         drink_recommender_questions.age(2)
-        
+
         # check user like alcohol
         drink_recommender_questions.alcohol_preference(True)
 
@@ -92,7 +92,7 @@ recommend_caffeine_drink_high
     when
         # not recommending caffeinated drink at night
         drink_recommender_questions.time_of_day($day)
-        check $day in (1,2)
+        check $day in (1,2,3)
         
         # user with Diabetes can't take this
         drink_recommender_questions.health_information($health)
