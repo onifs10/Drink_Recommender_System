@@ -8,7 +8,7 @@ age($age)
             ! you are an adult
 
 alcohol_preference($choice)
-    Do you take alcoholic drinks ?
+    Do you drink alcoholic drinks ?
     ---
     $choice = yn
         True  ! Noted, you want an alcoholic drink
@@ -23,7 +23,7 @@ time_of_day($daytime)
         3: night
 
 weather_information($weather_types)
-    How is the weather like?
+    What is the weather like?
         - Please choose the most appropriate weather type(s)
     ---
     $weather_types = select_1
